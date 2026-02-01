@@ -24,18 +24,20 @@ function App() {
 
   const loadData = async () => {
     try {
+      const baseUrl = import.meta.env.BASE_URL
+
       // Load activities
-      const activitiesRes = await fetch('/garmin_data/activities.csv')
+      const activitiesRes = await fetch(`${baseUrl}garmin_data/activities.csv`)
       const activitiesText = await activitiesRes.text()
       const activitiesParsed = Papa.parse(activitiesText, { header: true, dynamicTyping: true })
 
       // Load daily stats
-      const dailyStatsRes = await fetch('/garmin_data/daily_stats.csv')
+      const dailyStatsRes = await fetch(`${baseUrl}garmin_data/daily_stats.csv`)
       const dailyStatsText = await dailyStatsRes.text()
       const dailyStatsParsed = Papa.parse(dailyStatsText, { header: true, dynamicTyping: true })
 
       // Load sleep data
-      const sleepRes = await fetch('/garmin_data/sleep_data.csv')
+      const sleepRes = await fetch(`${baseUrl}garmin_data/sleep_data.csv`)
       const sleepText = await sleepRes.text()
       const sleepParsed = Papa.parse(sleepText, { header: true, dynamicTyping: true })
 
