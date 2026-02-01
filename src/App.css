@@ -1,0 +1,301 @@
+.app {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Header */
+.header {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: #667eea;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Summary Cards */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+}
+
+.card-content h3 {
+  font-size: 1.8rem;
+  color: #667eea;
+  margin-bottom: 0.25rem;
+}
+
+.card-content p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.tabs button {
+  flex: 1;
+  min-width: 120px;
+  background: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tabs button:hover {
+  background: #f0f0f0;
+}
+
+.tabs button.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+/* Tab Content */
+.tab-content {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.overview,
+.activities,
+.health,
+.sleep {
+  display: grid;
+  gap: 2rem;
+}
+
+/* Chart Container */
+.chart-container {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.chart-container h2 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+/* Recent Activities */
+.recent-activities {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 15px;
+}
+
+.recent-activities h2 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.activities-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.activity-item {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.activity-name {
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.activity-details {
+  display: flex;
+  gap: 1rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.activity-details span {
+  background: #f0f0f0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+}
+
+/* Loading */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: white;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .app {
+    padding: 0.5rem;
+  }
+
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+  .summary-cards {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .card {
+    padding: 1rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .card-icon {
+    font-size: 2rem;
+  }
+
+  .card-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .card-content p {
+    font-size: 0.8rem;
+  }
+
+  .tabs {
+    gap: 0.25rem;
+  }
+
+  .tabs button {
+    min-width: 90px;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .tab-content {
+    padding: 1rem;
+  }
+
+  .chart-container {
+    padding: 1rem;
+  }
+
+  .chart-container h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .activity-name {
+    font-size: 1rem;
+  }
+
+  .activity-details {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .activity-details span {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 1.5rem 1rem;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .summary-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tabs button {
+    min-width: 80px;
+    font-size: 0.85rem;
+  }
+
+  .chart-container h2 {
+    font-size: 1.1rem;
+  }
+}
